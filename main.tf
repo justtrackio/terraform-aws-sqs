@@ -32,7 +32,7 @@ module "sqs" {
   queue_policy_statements = {
     account = {
       actions = [
-        "*",
+        "sqs:*",
       ]
       principals = [
         {
