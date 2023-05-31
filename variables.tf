@@ -3,24 +3,24 @@ variable "subscription" {
     topic_name    = string
     filter_policy = optional(string)
   }))
-  description = ""
-  default     = null
+  description = "The subscription details such as topic name and filter policy."
+  default     = {}
 }
 
 variable "subscription_aws_account_id" {
   type        = string
-  description = ""
+  description = "The AWS account ID for the subscription."
 }
 
 variable "dlq_enabled" {
   type        = bool
-  description = ""
+  description = "Defines if Dead Letter Queue (DLQ) is enabled."
   default     = true
 }
 
 variable "dlq_max_receive_count" {
   type        = number
-  description = ""
+  description = "The maximum number of times a message can be received from the DLQ before it's discarded."
   default     = 5
 }
 
@@ -33,18 +33,18 @@ variable "alarm" {
     period              = optional(number, 60)
     threshold           = optional(number, 0)
   })
-  description = ""
+  description = "The details of the alarm such as datapoints to alarm, evaluation periods, backlog minutes, period, and threshold."
   default     = {}
 }
 
 variable "alarm_enabled" {
   type        = bool
-  description = "Defines if alarm should be created"
+  description = "Defines if the alarm should be created."
   default     = false
 }
 
 variable "alarm_topic_arn" {
   type        = string
-  description = "ARN of the SNS Topic used for notifying about alarm/ok messages."
+  description = "The ARN of the SNS Topic used for notifying about alarm/ok messages."
   default     = null
 }
