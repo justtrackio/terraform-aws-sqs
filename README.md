@@ -20,6 +20,7 @@ Terraform module which creates a sqs queue
 | Name | Source | Version |
 |------|--------|---------|
 | <a name="module_sqs"></a> [sqs](#module\_sqs) | terraform-aws-modules/sqs/aws | 4.0.1 |
+| <a name="module_sqs_subscription"></a> [sqs\_subscription](#module\_sqs\_subscription) | terraform-aws-modules/sqs/aws | 4.0.1 |
 | <a name="module_this"></a> [this](#module\_this) | justtrackio/label/null | 0.26.0 |
 
 ## Resources
