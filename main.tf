@@ -2,7 +2,11 @@ data "aws_iam_policy_document" "subscription" {
   count = length(var.subscription) >= 1 ? 1 : 0
 
   statement {
-    actions   = ["sqs:SendMessage"]
+    actions = [
+      "sqs:SendMessage",
+      "sqs:ReceiveMessage",
+    ]
+
     resources = [module.sqs.queue_arn]
 
     principals {
