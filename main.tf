@@ -33,7 +33,7 @@ module "sqs" {
 
   create_queue_policy = true
 
-  source_queue_policy_documents = [try(data.aws_iam_policy_document.subscription[0].json)]
+  source_queue_policy_documents = try([data.aws_iam_policy_document.subscription[0].json], [])
 
   create_dlq = var.dlq_enabled
 
