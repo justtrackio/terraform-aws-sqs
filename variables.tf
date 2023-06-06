@@ -47,4 +47,5 @@ variable "subscription" {
 variable "subscription_aws_account_id" {
   type        = string
   description = "The AWS account ID for the subscription."
+  default     = null
 }
