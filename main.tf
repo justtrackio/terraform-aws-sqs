@@ -33,21 +33,7 @@ module "sqs" {
 
   create_queue_policy = true
 
-  #queue_policy_statements = {
-  #  account = {
-  #    actions = [
-  #      "sqs:*",
-  #    ]
-  #    principals = [
-  #      {
-  #        type        = "AWS"
-  #        identifiers = ["arn:aws:iam::${module.this.aws_account_id}:root"]
-  #      }
-  #    ]
-  #  }
-  #}
-
-  source_queue_policy_documents = [try(data.aws_iam_policy_document.subscription[0].json, null)]
+  source_queue_policy_documents = [try(data.aws_iam_policy_document.subscription[0].json)]
 
   create_dlq = var.dlq_enabled
 
