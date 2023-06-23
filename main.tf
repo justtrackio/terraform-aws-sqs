@@ -42,6 +42,9 @@ module "sqs" {
   }
 
   tags = module.this.tags
+
+  visibility_timeout_seconds = var.visibility_timeout_seconds
+
 }
 
 resource "aws_sns_topic_subscription" "default" {
