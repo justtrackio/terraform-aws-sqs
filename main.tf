@@ -31,7 +31,7 @@ module "sqs" {
 
   name = module.this.id
 
-  create_queue_policy = length(var.subscription) >= 1 ? true : false
+  create_queue_policy = length(var.subscription) >= 1
 
   source_queue_policy_documents = try([data.aws_iam_policy_document.subscription[0].json], [])
 
