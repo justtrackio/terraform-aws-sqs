@@ -1,3 +1,10 @@
+## [1.2.0](https://github.com/justtrackio/terraform-aws-sqs/compare/v1.1.0...v1.2.0) (2023-07-31)
+
+
+### Features
+
+* add message retention seconds ([#13](https://github.com/justtrackio/terraform-aws-sqs/issues/13)) ([ffb779c](https://github.com/justtrackio/terraform-aws-sqs/commit/ffb779c74a5421bade64a6186b938e5c8a37cddf))
+
 ## [1.1.0](https://github.com/justtrackio/terraform-aws-sqs/compare/v1.0.0...v1.1.0) (2023-07-31)
 
 
