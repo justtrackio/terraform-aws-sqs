@@ -35,6 +35,12 @@ variable "dlq_max_receive_count" {
   default     = 5
 }
 
+variable "fifo_queue" {
+  type        = bool
+  description = "Boolean designating a FIFO queue"
+  default     = false
+}
+
 variable "subscription" {
   type = map(object({
     topic_name    = string
