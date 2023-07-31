@@ -29,10 +29,11 @@ module "sqs" {
   source  = "terraform-aws-modules/sqs/aws"
   version = "4.0.1"
 
-  create_dlq          = var.dlq_enabled
-  create_queue_policy = length(var.subscription) >= 1
-  fifo_queue          = var.fifo_queue
-  name                = module.this.id
+  create_dlq                = var.dlq_enabled
+  create_queue_policy       = length(var.subscription) >= 1
+  fifo_queue                = var.fifo_queue
+  message_retention_seconds = var.message_retention_seconds
+  name                      = module.this.id
   redrive_policy = {
     maxReceiveCount = var.dlq_max_receive_count
   }
