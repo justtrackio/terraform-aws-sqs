@@ -1,3 +1,10 @@
+## [1.3.0](https://github.com/justtrackio/terraform-aws-sqs/compare/v1.2.0...v1.3.0) (2023-07-31)
+
+
+### Features
+
+* add delay seconds ([#14](https://github.com/justtrackio/terraform-aws-sqs/issues/14)) ([46ad27c](https://github.com/justtrackio/terraform-aws-sqs/commit/46ad27c244e00b74d84bd8ea9acfc51fa716087c))
+
 ## [1.2.0](https://github.com/justtrackio/terraform-aws-sqs/compare/v1.1.0...v1.2.0) (2023-07-31)
 
 
