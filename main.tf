@@ -29,22 +29,16 @@ module "sqs" {
   source  = "terraform-aws-modules/sqs/aws"
   version = "4.0.1"
 
-  name = module.this.id
-
+  create_dlq          = var.dlq_enabled
   create_queue_policy = length(var.subscription) >= 1
-
-  source_queue_policy_documents = try([data.aws_iam_policy_document.subscription[0].json], [])
-
-  create_dlq = var.dlq_enabled
-
+  fifo_queue          = var.fifo_queue
+  name                = module.this.id
   redrive_policy = {
     maxReceiveCount = var.dlq_max_receive_count
   }
-
-  tags = module.this.tags
-
-  visibility_timeout_seconds = var.visibility_timeout_seconds
-
+  source_queue_policy_documents = try([data.aws_iam_policy_document.subscription[0].json], [])
+  tags                          = module.this.tags
+  visibility_timeout_seconds    = var.visibility_timeout_seconds
 }
 
 resource "aws_sns_topic_subscription" "default" {
