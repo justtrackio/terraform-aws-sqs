@@ -41,6 +41,12 @@ variable "fifo_queue" {
   default     = false
 }
 
+variable "message_retention_seconds" {
+  description = "The number of seconds Amazon SQS retains a message. Integer representing seconds, from 60 (1 minute) to 1209600 (14 days)"
+  type        = number
+  default     = null
+}
+
 variable "subscription" {
   type = map(object({
     topic_name    = string
