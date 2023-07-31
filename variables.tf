@@ -23,6 +23,12 @@ variable "alarm_topic_arn" {
   default     = null
 }
 
+variable "delay_seconds" {
+  description = "The time in seconds that the delivery of all messages in the queue will be delayed. An integer from 0 to 900 (15 minutes)"
+  type        = number
+  default     = null
+}
+
 variable "dlq_enabled" {
   type        = bool
   description = "Defines if Dead Letter Queue (DLQ) is enabled."
