@@ -55,8 +55,9 @@ variable "message_retention_seconds" {
 
 variable "subscription" {
   type = map(object({
-    topic_name    = string
-    filter_policy = optional(string)
+    aws_account_id = optional(string)
+    topic_name     = string
+    filter_policy  = optional(string)
   }))
   description = "The subscription details such as topic name and filter policy."
   default     = {}
