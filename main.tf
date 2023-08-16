@@ -45,7 +45,7 @@ module "sqs" {
 
 resource "aws_sns_topic_subscription" "default" {
   for_each                        = var.subscription
-  topic_arn                       = "arn:aws:sns:${module.this.aws_region}:${each.value.aws_account_id != null ? each.value.aws_account_id : var.subscription_aws_account_id}:${each.value.topic_name}"
+  topic_arn                       = "arn:aws:sns:${module.this.aws_region}:${each.value.aws_account_id != null ? each.value.aws_account_id : module.this.aws_account_id}:${each.value.topic_name}"
   confirmation_timeout_in_minutes = "1"
   endpoint_auto_confirms          = "false"
   protocol                        = "sqs"
