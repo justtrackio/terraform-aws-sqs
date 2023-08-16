@@ -1,3 +1,10 @@
+## [1.4.1](https://github.com/justtrackio/terraform-aws-sqs/compare/v1.4.0...v1.4.1) (2023-08-16)
+
+
+### Bug Fixes
+
+* remove-not-needed-variable ([#16](https://github.com/justtrackio/terraform-aws-sqs/issues/16)) ([938c0d8](https://github.com/justtrackio/terraform-aws-sqs/commit/938c0d8151212e96341d1c95ba500380e1c28a3d))
+
 ## [1.4.0](https://github.com/justtrackio/terraform-aws-sqs/compare/v1.3.0...v1.4.0) (2023-08-09)
 
 
