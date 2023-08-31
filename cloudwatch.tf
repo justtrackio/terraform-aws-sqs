@@ -1,5 +1,6 @@
 locals {
   alarm_description = var.alarm.description != null ? var.alarm.description : "SQS Queue Metrics: https://${module.this.aws_region}.console.aws.amazon.com/sqs/v2/home?region=${module.this.aws_region}#/queues/https%3A%2F%2Fsqs.${module.this.aws_region}.amazonaws.com%2F${module.this.aws_account_id}%2F${module.sqs.queue_name}"
+  alarm_topic_arn   = var.alarm_topic_arn != null ? var.alarm_topic_arn : "arn:aws:sns:${module.this.aws_region}:${module.this.aws_account_id}:${module.this.environment}-alarms"
 }
 
 resource "aws_cloudwatch_metric_alarm" "backlog" {
@@ -83,8 +84,8 @@ resource "aws_cloudwatch_metric_alarm" "backlog" {
     return_data = true
   }
 
-  alarm_actions = var.alarm_topic_arn != null ? [var.alarm_topic_arn] : []
-  ok_actions    = var.alarm_topic_arn != null ? [var.alarm_topic_arn] : []
+  alarm_actions = [local.alarm_topic_arn]
+  ok_actions    = [local.alarm_topic_arn]
 
   tags = module.this.tags
 }
