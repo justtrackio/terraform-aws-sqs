@@ -27,7 +27,7 @@ data "aws_iam_policy_document" "subscription" {
 
 module "sqs" {
   source  = "terraform-aws-modules/sqs/aws"
-  version = "4.0.1"
+  version = "4.1.0"
 
   create_dlq                = var.dlq_enabled
   create_queue_policy       = length(var.subscription) >= 1
