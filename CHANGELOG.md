@@ -1,3 +1,10 @@
+## [1.6.0](https://github.com/justtrackio/terraform-aws-sqs/compare/v1.5.0...v1.6.0) (2024-05-14)
+
+
+### Features
+
+* increase backlog alarm minutes ([#47](https://github.com/justtrackio/terraform-aws-sqs/issues/47)) ([8d12702](https://github.com/justtrackio/terraform-aws-sqs/commit/8d127025a0e4f11117de532124a8138efaf4a4bb))
+
 ## [1.4.1](https://github.com/justtrackio/terraform-aws-sqs/compare/v1.4.0...v1.4.1) (2023-08-16)
 
 
