@@ -3,7 +3,7 @@ variable "alarm" {
     datapoints_to_alarm = optional(number, 3)
     description         = optional(string, null)
     evaluation_periods  = optional(number, 3)
-    backlog_minutes     = optional(number, 3)
+    backlog_minutes     = optional(number, 5)
     period              = optional(number, 60)
     threshold           = optional(number, 0)
   })
