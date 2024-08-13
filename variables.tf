@@ -1,9 +1,9 @@
 variable "alarm" {
   type = object({
+    backlog_minutes     = optional(number, 5)
     datapoints_to_alarm = optional(number, 3)
     description         = optional(string, null)
     evaluation_periods  = optional(number, 3)
-    backlog_minutes     = optional(number, 5)
     period              = optional(number, 60)
     threshold           = optional(number, 0)
   })
@@ -27,6 +27,25 @@ variable "delay_seconds" {
   description = "The time in seconds that the delivery of all messages in the queue will be delayed. An integer from 0 to 900 (15 minutes)"
   type        = number
   default     = null
+}
+
+variable "dlq_alarm" {
+  type = object({
+    backlog_minutes     = optional(number, 5)
+    datapoints_to_alarm = optional(number, 3)
+    description         = optional(string, null)
+    evaluation_periods  = optional(number, 3)
+    period              = optional(number, 60)
+    threshold           = optional(number, 10)
+  })
+  description = "The details of the DLQ alarm such as datapoints to alarm, evaluation periods, backlog minutes, period, and threshold."
+  default     = {}
+}
+
+variable "dlq_alarm_enabled" {
+  type        = bool
+  description = "Defines if the DLQ alarm should be created."
+  default     = true
 }
 
 variable "dlq_enabled" {

@@ -19,7 +19,7 @@ Terraform module which creates a sqs queue
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_sqs"></a> [sqs](#module\_sqs) | terraform-aws-modules/sqs/aws | 4.0.1 |
+| <a name="module_sqs"></a> [sqs](#module\_sqs) | terraform-aws-modules/sqs/aws | 4.2.0 |
 | <a name="module_this"></a> [this](#module\_this) | justtrackio/label/null | 0.26.0 |
 
 ## Resources
@@ -27,6 +27,7 @@ Terraform module which creates a sqs queue
 | Name | Type |
 |------|------|
 | [aws_cloudwatch_metric_alarm.backlog](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_metric_alarm) | resource |
+| [aws_cloudwatch_metric_alarm.dlq_backlog](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_metric_alarm) | resource |
 | [aws_sns_topic_subscription.default](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/sns_topic_subscription) | resource |
 | [aws_iam_policy_document.subscription](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document) | data source |
 
@@ -35,7 +36,7 @@ Terraform module which creates a sqs queue
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_additional_tag_map"></a> [additional\_tag\_map](#input\_additional\_tag\_map) | Additional key-value pairs to add to each map in `tags_as_list_of_maps`. Not added to `tags` or `id`.<br>This is for some rare cases where resources want additional configuration of tags<br>and therefore take a list of maps with tag key, value, and additional configuration. | `map(string)` | `{}` | no |
-| <a name="input_alarm"></a> [alarm](#input\_alarm) | The details of the alarm such as datapoints to alarm, evaluation periods, backlog minutes, period, and threshold. | <pre>object({<br>    datapoints_to_alarm = optional(number, 3)<br>    description         = optional(string, null)<br>    evaluation_periods  = optional(number, 3)<br>    backlog_minutes     = optional(number, 5)<br>    period              = optional(number, 60)<br>    threshold           = optional(number, 0)<br>  })</pre> | `{}` | no |
+| <a name="input_alarm"></a> [alarm](#input\_alarm) | The details of the alarm such as datapoints to alarm, evaluation periods, backlog minutes, period, and threshold. | <pre>object({<br>    backlog_minutes     = optional(number, 5)<br>    datapoints_to_alarm = optional(number, 3)<br>    description         = optional(string, null)<br>    evaluation_periods  = optional(number, 3)<br>    period              = optional(number, 60)<br>    threshold           = optional(number, 0)<br>  })</pre> | `{}` | no |
 | <a name="input_alarm_enabled"></a> [alarm\_enabled](#input\_alarm\_enabled) | Defines if the alarm should be created. | `bool` | `false` | no |
 | <a name="input_alarm_topic_arn"></a> [alarm\_topic\_arn](#input\_alarm\_topic\_arn) | The ARN of the SNS Topic used for notifying about alarm/ok messages. | `string` | `null` | no |
 | <a name="input_attributes"></a> [attributes](#input\_attributes) | ID element. Additional attributes (e.g. `workers` or `cluster`) to add to `id`,<br>in the order they appear in the list. New attributes are appended to the<br>end of the list. The elements of the list are joined by the `delimiter`<br>and treated as a single ID element. | `list(string)` | `[]` | no |
@@ -45,6 +46,8 @@ Terraform module which creates a sqs queue
 | <a name="input_delay_seconds"></a> [delay\_seconds](#input\_delay\_seconds) | The time in seconds that the delivery of all messages in the queue will be delayed. An integer from 0 to 900 (15 minutes) | `number` | `null` | no |
 | <a name="input_delimiter"></a> [delimiter](#input\_delimiter) | Delimiter to be used between ID elements.<br>Defaults to `-` (hyphen). Set to `""` to use no delimiter at all. | `string` | `null` | no |
 | <a name="input_descriptor_formats"></a> [descriptor\_formats](#input\_descriptor\_formats) | Describe additional descriptors to be output in the `descriptors` output map.<br>Map of maps. Keys are names of descriptors. Values are maps of the form<br>`{<br>   format = string<br>   labels = list(string)<br>}`<br>(Type is `any` so the map values can later be enhanced to provide additional options.)<br>`format` is a Terraform format string to be passed to the `format()` function.<br>`labels` is a list of labels, in order, to pass to `format()` function.<br>Label values will be normalized before being passed to `format()` so they will be<br>identical to how they appear in `id`.<br>Default is `{}` (`descriptors` output will be empty). | `any` | `{}` | no |
+| <a name="input_dlq_alarm"></a> [dlq\_alarm](#input\_dlq\_alarm) | The details of the DLQ alarm such as datapoints to alarm, evaluation periods, backlog minutes, period, and threshold. | <pre>object({<br>    backlog_minutes     = optional(number, 5)<br>    datapoints_to_alarm = optional(number, 3)<br>    description         = optional(string, null)<br>    evaluation_periods  = optional(number, 3)<br>    period              = optional(number, 60)<br>    threshold           = optional(number, 10)<br>  })</pre> | `{}` | no |
+| <a name="input_dlq_alarm_enabled"></a> [dlq\_alarm\_enabled](#input\_dlq\_alarm\_enabled) | Defines if the DLQ alarm should be created. | `bool` | `true` | no |
 | <a name="input_dlq_enabled"></a> [dlq\_enabled](#input\_dlq\_enabled) | Defines if Dead Letter Queue (DLQ) is enabled. | `bool` | `true` | no |
 | <a name="input_dlq_max_receive_count"></a> [dlq\_max\_receive\_count](#input\_dlq\_max\_receive\_count) | The maximum number of times a message can be received from the DLQ before it's discarded. | `number` | `5` | no |
 | <a name="input_enabled"></a> [enabled](#input\_enabled) | Set to false to prevent the module from creating any resources | `bool` | `null` | no |
