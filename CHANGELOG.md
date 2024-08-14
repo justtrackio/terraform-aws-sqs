@@ -1,3 +1,10 @@
+## [1.7.0](https://github.com/justtrackio/terraform-aws-sqs/compare/v1.6.0...v1.7.0) (2024-08-14)
+
+
+### Features
+
+* add dlq alarm ([#55](https://github.com/justtrackio/terraform-aws-sqs/issues/55)) ([c2846f4](https://github.com/justtrackio/terraform-aws-sqs/commit/c2846f43a82c021474ba218634b6f80984fc731e))
+
 ## [1.6.0](https://github.com/justtrackio/terraform-aws-sqs/compare/v1.5.0...v1.6.0) (2024-05-14)
 
 
