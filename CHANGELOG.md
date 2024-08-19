@@ -1,3 +1,10 @@
+## [1.7.1](https://github.com/justtrackio/terraform-aws-sqs/compare/v1.7.0...v1.7.1) (2024-08-19)
+
+
+### Bug Fixes
+
+* change dlq alarm period ([#57](https://github.com/justtrackio/terraform-aws-sqs/issues/57)) ([5c682d1](https://github.com/justtrackio/terraform-aws-sqs/commit/5c682d1e93dd531d9fb18f23be6c6f08cf250ea1))
+
 ## [1.7.0](https://github.com/justtrackio/terraform-aws-sqs/compare/v1.6.0...v1.7.0) (2024-08-14)
 
 
