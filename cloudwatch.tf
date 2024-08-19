@@ -116,7 +116,7 @@ resource "aws_cloudwatch_metric_alarm" "dlq_backlog" {
       }
       metric_name = "ApproximateNumberOfMessagesVisible"
       namespace   = "AWS/SQS"
-      period      = var.alarm.period
+      period      = var.dlq_alarm.period
       stat        = "Average"
     }
   }
