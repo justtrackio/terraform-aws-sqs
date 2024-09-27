@@ -50,6 +50,7 @@ Terraform module which creates a sqs queue
 | <a name="input_dlq_alarm_enabled"></a> [dlq\_alarm\_enabled](#input\_dlq\_alarm\_enabled) | Defines if the DLQ alarm should be created. | `bool` | `true` | no |
 | <a name="input_dlq_enabled"></a> [dlq\_enabled](#input\_dlq\_enabled) | Defines if Dead Letter Queue (DLQ) is enabled. | `bool` | `true` | no |
 | <a name="input_dlq_max_receive_count"></a> [dlq\_max\_receive\_count](#input\_dlq\_max\_receive\_count) | The maximum number of times a message can be received from the DLQ before it's discarded. | `number` | `5` | no |
+| <a name="input_dlq_name"></a> [dlq\_name](#input\_dlq\_name) | Sets a custom name for the to be created dlq. | `string` | `null` | no |
 | <a name="input_enabled"></a> [enabled](#input\_enabled) | Set to false to prevent the module from creating any resources | `bool` | `null` | no |
 | <a name="input_environment"></a> [environment](#input\_environment) | ID element. Usually used for region e.g. 'uw2', 'us-west-2', OR role 'prod', 'staging', 'dev', 'UAT' | `string` | `null` | no |
 | <a name="input_fifo_queue"></a> [fifo\_queue](#input\_fifo\_queue) | Boolean designating a FIFO queue | `bool` | `false` | no |

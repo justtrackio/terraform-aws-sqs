@@ -60,6 +60,12 @@ variable "dlq_max_receive_count" {
   default     = 5
 }
 
+variable "dlq_name" {
+  type        = string
+  description = "Sets a custom name for the to be created dlq."
+  default     = null
+}
+
 variable "fifo_queue" {
   type        = bool
   description = "Boolean designating a FIFO queue"
