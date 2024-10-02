@@ -32,6 +32,7 @@ module "sqs" {
   create_dlq                = var.dlq_enabled
   create_queue_policy       = length(var.subscription) >= 1
   delay_seconds             = var.delay_seconds
+  dlq_name                  = var.dlq_name
   fifo_queue                = var.fifo_queue
   message_retention_seconds = var.message_retention_seconds
   name                      = module.this.id
