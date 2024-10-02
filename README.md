@@ -72,5 +72,12 @@ Terraform module which creates a sqs queue
 
 ## Outputs
 
-No outputs.
+| Name | Description |
+|------|-------------|
+| <a name="output_dlq_queue_arn"></a> [dlq\_queue\_arn](#output\_dlq\_queue\_arn) | queue arn of the dead letter sqs queue |
+| <a name="output_dlq_queue_name"></a> [dlq\_queue\_name](#output\_dlq\_queue\_name) | queue name of the dead letter sqs queue |
+| <a name="output_dlq_queue_url"></a> [dlq\_queue\_url](#output\_dlq\_queue\_url) | queue url of the dead letter sqs queue |
+| <a name="output_sqs_queue_arn"></a> [sqs\_queue\_arn](#output\_sqs\_queue\_arn) | queue arn of the main sqs queue |
+| <a name="output_sqs_queue_name"></a> [sqs\_queue\_name](#output\_sqs\_queue\_name) | queue name of the main sqs queue |
+| <a name="output_sqs_queue_url"></a> [sqs\_queue\_url](#output\_sqs\_queue\_url) | queue url of the main sqs queue |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
