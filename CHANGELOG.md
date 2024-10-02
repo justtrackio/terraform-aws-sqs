@@ -1,3 +1,10 @@
+## [1.8.0](https://github.com/justtrackio/terraform-aws-sqs/compare/v1.7.1...v1.8.0) (2024-10-02)
+
+
+### Features
+
+* allow customizing the dlq name, add outputs ([#61](https://github.com/justtrackio/terraform-aws-sqs/issues/61)) ([8a62556](https://github.com/justtrackio/terraform-aws-sqs/commit/8a625567befbf3cc11dbe04af8151be38c17beab))
+
 ## [1.7.1](https://github.com/justtrackio/terraform-aws-sqs/compare/v1.7.0...v1.7.1) (2024-08-19)
 
 
