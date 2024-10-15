@@ -1,3 +1,10 @@
+## [1.8.1](https://github.com/justtrackio/terraform-aws-sqs/compare/v1.8.0...v1.8.1) (2024-10-15)
+
+
+### Bug Fixes
+
+* disable module output interpolation when not creating dlq ([#62](https://github.com/justtrackio/terraform-aws-sqs/issues/62)) ([63dd678](https://github.com/justtrackio/terraform-aws-sqs/commit/63dd6781972386549cd8756517a6e32c6d453a45))
+
 ## [1.8.0](https://github.com/justtrackio/terraform-aws-sqs/compare/v1.7.1...v1.8.0) (2024-10-02)
 
 
