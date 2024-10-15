@@ -2,7 +2,7 @@ locals {
   alarm_description     = var.alarm.description != null ? var.alarm.description : "SQS Queue Metrics: https://${module.this.aws_region}.console.aws.amazon.com/sqs/v2/home?region=${module.this.aws_region}#/queues/https%3A%2F%2Fsqs.${module.this.aws_region}.amazonaws.com%2F${module.this.aws_account_id}%2F${module.sqs.queue_name}"
   alarm_topic_arn       = var.alarm_topic_arn != null ? var.alarm_topic_arn : "arn:aws:sns:${module.this.aws_region}:${module.this.aws_account_id}:${module.this.environment}-alarms"
   dlq_alarm_enabled     = var.alarm_enabled && var.dlq_alarm_enabled
-  dlq_alarm_description = var.alarm.description != null ? var.alarm.description : "SQS Queue Metrics: https://${module.this.aws_region}.console.aws.amazon.com/sqs/v2/home?region=${module.this.aws_region}#/queues/https%3A%2F%2Fsqs.${module.this.aws_region}.amazonaws.com%2F${module.this.aws_account_id}%2F${module.sqs.dead_letter_queue_name}"
+  dlq_alarm_description = var.dlq_alarm.description != null ? var.dlq_alarm.description : (var.dlq_enabled ? "SQS Queue Metrics: https://${module.this.aws_region}.console.aws.amazon.com/sqs/v2/home?region=${module.this.aws_region}#/queues/https%3A%2F%2Fsqs.${module.this.aws_region}.amazonaws.com%2F${module.this.aws_account_id}%2F${module.sqs.dead_letter_queue_name}" : "")
 }
 
 resource "aws_cloudwatch_metric_alarm" "backlog" {
