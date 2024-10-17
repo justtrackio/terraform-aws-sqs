@@ -1,3 +1,10 @@
+## [1.8.2](https://github.com/justtrackio/terraform-aws-sqs/compare/v1.8.1...v1.8.2) (2024-10-17)
+
+
+### Bug Fixes
+
+* dont specify a redrive policy when a dlq should not be created ([#65](https://github.com/justtrackio/terraform-aws-sqs/issues/65)) ([e4fd6d8](https://github.com/justtrackio/terraform-aws-sqs/commit/e4fd6d8c31df5629aea33b37dfa3bd11ae471548))
+
 ## [1.8.1](https://github.com/justtrackio/terraform-aws-sqs/compare/v1.8.0...v1.8.1) (2024-10-15)
 
 
