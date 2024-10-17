@@ -36,9 +36,9 @@ module "sqs" {
   fifo_queue                = var.fifo_queue
   message_retention_seconds = var.message_retention_seconds
   name                      = module.this.id
-  redrive_policy = {
+  redrive_policy = var.dlq_enabled ? {
     maxReceiveCount = var.dlq_max_receive_count
-  }
+  } : {}
   source_queue_policy_documents = try([data.aws_iam_policy_document.subscription[0].json], [])
   tags                          = module.this.tags
   visibility_timeout_seconds    = var.visibility_timeout_seconds
