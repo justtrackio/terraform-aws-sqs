@@ -9,7 +9,7 @@ resource "aws_cloudwatch_metric_alarm" "backlog" {
   count = module.this.enabled && var.alarm_enabled ? 1 : 0
 
   alarm_description = jsonencode(merge({
-    Severity    = "warning"
+    Priority    = var.alarm.priority
     Description = local.alarm_description
   }, module.this.tags, module.this.additional_tag_map))
   alarm_name          = "${module.sqs.queue_name}-backlog"
@@ -96,7 +96,7 @@ resource "aws_cloudwatch_metric_alarm" "dlq_backlog" {
   count = module.this.enabled && local.dlq_alarm_enabled ? 1 : 0
 
   alarm_description = jsonencode(merge({
-    Severity    = "warning"
+    Priority    = var.dlq_alarm.priority
     Description = local.dlq_alarm_description
   }, module.this.tags, module.this.additional_tag_map))
   alarm_name          = "${module.sqs.dead_letter_queue_name}-backlog"

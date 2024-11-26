@@ -6,6 +6,7 @@ variable "alarm" {
     evaluation_periods  = optional(number, 3)
     period              = optional(number, 60)
     threshold           = optional(number, 0)
+    priority            = optional(string, "warning")
   })
   description = "The details of the alarm such as datapoints to alarm, evaluation periods, backlog minutes, period, and threshold."
   default     = {}
@@ -37,6 +38,7 @@ variable "dlq_alarm" {
     evaluation_periods  = optional(number, 3)
     period              = optional(number, 60)
     threshold           = optional(number, 10)
+    priority            = optional(string, "warning")
   })
   description = "The details of the DLQ alarm such as datapoints to alarm, evaluation periods, backlog minutes, period, and threshold."
   default     = {}
