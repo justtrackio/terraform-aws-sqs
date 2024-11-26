@@ -1,3 +1,10 @@
+## [1.9.0](https://github.com/justtrackio/terraform-aws-sqs/compare/v1.8.2...v1.9.0) (2024-11-26)
+
+
+### Features
+
+* add alarm priority ([#68](https://github.com/justtrackio/terraform-aws-sqs/issues/68)) ([ebf3564](https://github.com/justtrackio/terraform-aws-sqs/commit/ebf3564fa0a1d07175ae0c264fe98e090e02816a))
+
 ## [1.8.2](https://github.com/justtrackio/terraform-aws-sqs/compare/v1.8.1...v1.8.2) (2024-10-17)
 
 
